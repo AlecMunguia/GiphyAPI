@@ -5,7 +5,7 @@ $(document).ready(function() {
     
     function displayGifs() {
         var gif = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/random?&api_key=rzO0fPt9a1vAJenHpLHsuvuxRwJjB4sg&tag=" + tvShow;
+        var queryURL = "https://api.giphy.com/v1/gifs/random?&api_key=rzO0fPt9a1vAJenHpLHsuvuxRwJjB4sg&tag=" + topics[i];
 
         $.ajax({
             url: queryURL,
@@ -21,6 +21,10 @@ $(document).ready(function() {
               showImage.attr("alt", "show image");
               $("#images").prepend(showImage);
             });   
+
+            for (var i=0; i<topics.length; i++) {
+              console.log(topics[i]);
+            }
         }
 
 
@@ -44,7 +48,18 @@ renderButtons();
 
 
 
+$("#add-show").on("click", function(event) {
+  event.preventDefault();
+  // This line of code will grab the input from the textbox
+  var show = $("#show-input").val().trim();
 
+  // The movie from the textbox is then added to our array
+  topics.push(show);
+
+  // Calling renderButtons which handles the processing of our movie array
+  renderButtons();
+
+});
 
 
 
