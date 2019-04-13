@@ -1,0 +1,19 @@
+#inputform {
+    margin: auto;
+    width: 25%;
+    color: whitesmoke;
+}
+
+#buttons {
+    margin: auto;
+    width: 25%;
+}
+
+#images {
+    text-align: center;
+}
+
+body {
+    background: black;
+    color: whitesmoke;
+}
